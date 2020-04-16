@@ -1,0 +1,29 @@
+include(common/inc/common.inc)
+
+/* ********************************************************************************************** */
+
+CREATE TABLE COMMON.TYPE_CUSTOMER_STATES
+(
+ ID COMMON.D_CUSTOMER_STATE_ID NOT NULL,
+
+ STABLE_NAME COMMON.D_TYPE_STABLE_NAME_NN_UCASE,
+
+ CONSTRAINT M4_CONCAT(PK_, TBLID_TYPE_CUSTOMER_STATES)
+  PRIMARY KEY (ID),
+
+ CONSTRAINT M4_CONCAT(UNIQUE_, TBLID_TYPE_CUSTOMER_STATES, __STABLE_NAME)
+  UNIQUE(STABLE_NAME)
+);/*CREATE TABLE COMMON.TYPE_CUSTOMER_STATES*/
+
+/* ********************************************************************************************** */
+
+INSERT INTO COMMON.TYPE_CUSTOMER_STATES (ID, STABLE_NAME)
+ VALUES(C_COMMON_EMPLOYER_STATE_ID__NOT_ACTIVATED,'NOT ACTIVATED');
+
+INSERT INTO COMMON.TYPE_CUSTOMER_STATES (ID, STABLE_NAME)
+ VALUES(C_COMMON_EMPLOYER_STATE_ID__ACTIVE,'ACTIVE');
+
+INSERT INTO COMMON.TYPE_CUSTOMER_STATES (ID, STABLE_NAME)
+ VALUES(C_COMMON_EMPLOYER_STATE_ID__DISABLED,'DISABLED');
+
+/* ********************************************************************************************** */

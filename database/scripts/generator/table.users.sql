@@ -1,0 +1,30 @@
+include(generator/inc/common.inc)
+
+/* ********************************************************************************************** */
+
+/*reserve first 99 ids*/
+CREATE SEQUENCE GENERATOR.SEQ_USERS START WITH 100;
+
+CREATE TABLE GENERATOR.USERS
+(
+ OBJECT_ID      CORE.D_OBJECT_ID NOT NULL,
+ OBJECT_CLASS   CORE.D_OBJECT_CLASS NOT NULL,
+
+ NAME           VARCHAR(64) NOT NULL,
+ EMAIL          VARCHAR(64) NOT NULL,
+ PSWD_HASH      VARCHAR(64) NOT NULL,
+
+ M4_DEF_OBJECT_PK(GENERATOR_USERS),
+
+ M4_DEF_OBJECT_FK(GENERATOR_USERS,CORE_OBJECTS)
+);/*TABLE GENERATOR.USERS*/
+
+M4_CREATE_TRIGGER_OBJ_DELETE(GENERATOR_USERS);
+
+M4_REG_TABLE_NAME2(GENERATOR_USERS,CORE_OBJECTS);
+
+M4_REG_CLASS(GENERATOR_USERS,GENERATOR_USERS,'GENERATOR.SEQ_USERS','USERS');
+
+M4_REG_POS_OBJ_LINKS(GENERATOR_COMPANIES,GENERATOR_USERS);
+
+/* ********************************************************************************************** */

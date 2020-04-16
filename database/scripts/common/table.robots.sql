@@ -1,0 +1,36 @@
+include(common/inc/common.inc)
+
+/* ********************************************************************************************** */
+
+/*reserve first 999 ids*/
+CREATE SEQUENCE COMMON.SEQ_ROBOTS START WITH 1000;
+
+CREATE TABLE COMMON.ROBOTS
+(
+ OBJECT_ID     CORE.D_OBJECT_ID NOT NULL,
+ OBJECT_CLASS  CORE.D_OBJECT_CLASS NOT NULL,
+
+ NAME          COMMON.D_ROBOT_NAME_NN,
+
+ DESCRIPTION   COMMON.D_ROBOT_DESCRIPTION,
+
+ /* ---------- */
+ M4_DEF_OBJECT_PK(COMMON_ROBOTS),
+
+ M4_DEF_OBJECT_FK(COMMON_ROBOTS,CORE_OBJECTS),
+
+ CONSTRAINT M4_CONCAT(UNIQUE_, TBLID_COMMON_CUSTOMERS, __name)
+  UNIQUE(NAME,OBJECT_CLASS)
+);/*TABLE COMMON.ROBOTS*/
+
+M4_CREATE_TRIGGER_OBJ_DELETE(COMMON_ROBOTS);
+
+M4_REG_TABLE_NAME2(COMMON_ROBOTS,CORE_OBJECTS);
+
+M4_REG_CLASS2(COMMON_ROBOTS,COMMON_ROBOTS,'seq_robots','Робот');
+
+M4_REG_POS_OBJ_LINKS(CORE_OBJECTS,COMMON_ROBOTS);
+
+M4_CREATE_TRIGGER_RO_OBJ_GUARD(COMMON_ROBOTS);
+
+/* ********************************************************************************************** */

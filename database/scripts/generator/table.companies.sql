@@ -1,0 +1,34 @@
+include(generator/inc/common.inc)
+
+/* ********************************************************************************************** */
+
+/*reserve first 99 ids*/
+CREATE SEQUENCE GENERATOR.SEQ_COMPANIES START WITH 100;
+
+CREATE TABLE GENERATOR.COMPANIES
+(
+ OBJECT_ID     CORE.D_OBJECT_ID NOT NULL,
+ OBJECT_CLASS  CORE.D_OBJECT_CLASS NOT NULL,
+
+ NAME          VARCHAR(128) NOT NULL,
+ HOST          VARCHAR(128) NOT NULL,
+
+ M4_DEF_OBJECT_PK(GENERATOR_COMPANIES),
+
+ M4_DEF_OBJECT_FK(GENERATOR_COMPANIES,CORE_OBJECTS),
+
+ UNIQUE (HOST),
+
+ CHECK ((NAME <> '') AND (trim(both ' ' from NAME) = NAME)),
+ CHECK ((HOST <> '') AND (trim(both ' ' from HOST) = HOST))
+);/*TABLE GENERATOR.COMPANIES*/
+
+M4_CREATE_TRIGGER_OBJ_DELETE(GENERATOR_COMPANIES);
+
+M4_REG_TABLE_NAME2(GENERATOR_COMPANIES,CORE_OBJECTS);
+
+M4_REG_CLASS(GENERATOR_COMPANIES,GENERATOR_COMPANIES,'GENERATOR.SEQ_COMPANIES','COMPANIES');
+
+M4_REG_POS_OBJ_LINKS(CORE_OBJECTS,GENERATOR_COMPANIES);
+
+/* ********************************************************************************************** */

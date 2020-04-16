@@ -1,0 +1,36 @@
+include(cryptobot/inc/common.inc)
+
+/* ********************************************************************************************** */
+
+/*reserve first 999 ids*/
+CREATE SEQUENCE CRYPTOBOT.SEQ_PRICES_HISTORY START WITH 1000;
+
+CREATE TABLE CRYPTOBOT.PRICES_HISTORY
+(
+ OBJECT_ID         CORE.D_OBJECT_ID NOT NULL,
+ OBJECT_CLASS      CORE.D_OBJECT_CLASS NOT NULL,
+
+ PRICE_ID          CORE.D_OBJECT_ID NOT NULL,
+ PRICE_CLASS       CORE.D_OBJECT_CLASS NOT NULL,
+
+ PRICE_DATE        CRYPTOBOT.D_PRICE_DATE_NN,
+
+ PRICE_VALUE       CRYPTOBOT.D_PRICE_VALUE_NN,
+
+ /* ---------- */
+ M4_DEF_OBJECT_PK(CRYPTOBOT_PRICES_HISTORY),
+
+ CONSTRAINT M4_CONCAT(FK_, TBLID_CRYPTOBOT_PRICES_HISTORY, _, TBLID_CORE_OBJECTS, __BY_PRICE)
+  FOREIGN KEY (PRICE_ID,PRICE_CLASS) REFERENCES TBLNAME_CORE_OBJECTS (OBJECT_ID,OBJECT_CLASS),
+
+ CONSTRAINT M4_CONCAT(UNIQUE_, TBLID_CRYPTOBOT_PRICES_HISTORY, __PRICE_DATE)
+  UNIQUE (OBJECT_CLASS,PRICE_ID,PRICE_CLASS,PRICE_DATE)
+);/*TABLE CRYPTOBOT.PRICES_HISTORY*/
+
+/* ********************************************************************************************** */
+
+M4_REG_TABLE_NAME1(CRYPTOBOT_PRICES_HISTORY);
+
+M4_REG_CLASS2(CRYPTOBOT_PRICES_HISTORY,CRYPTOBOT_PRICES_HISTORY,'seq_prices_history','История стоимости');
+
+/* ********************************************************************************************** */

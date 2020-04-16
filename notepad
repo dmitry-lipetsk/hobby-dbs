@@ -1,0 +1,187 @@
+<NotepadPlus>
+    <Project name="Code">
+        <Folder name="common">
+            <Folder name="php">
+                <File name="code\common\php\code.common.dbclass_manager.php" />
+                <File name="code\common\php\code.common.dbclass_descr.php" />
+                <File name="code\common\php\code.common.dbtable_descr.php" />
+                <File name="code\common\php\code.common.error_messages.php" />
+            </Folder>
+        </Folder>
+        <Folder name="lib">
+            <Folder name="php">
+                <Folder name="dbms">
+                    <Folder name="pgsql">
+                        <File name="code\lib\php\dbms\pgsql\lib.dbms.pgsql.connection.php" />
+                        <File name="code\lib\php\dbms\pgsql\lib.dbms.pgsql.error_messages.php" />
+                        <File name="code\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction.php" />
+                        <File name="code\lib\php\dbms\pgsql\lib.dbms.pgsql.result.php" />
+                    </Folder>
+                </Folder>
+            </Folder>
+        </Folder>
+        <Folder name="database">
+            <Folder name="php">
+                <Folder name="data">
+                    <Folder name="common">
+                        <File name="code\database\php\data\common\code.database.data.common.class_names.php" />
+                    </Folder>
+                    <Folder name="core">
+                        <File name="code\database\php\data\core\code.database.data.core.class_names.php" />
+                        <File name="code\database\php\data\core\code.database.data.core.table_names.php" />
+                    </Folder>
+                    <Folder name="cryptobot">
+                        <File name="code\database\php\data\cryptobot\code.database.data.cryptobot.class_names.php" />
+                    </Folder>
+                </Folder>
+                <Folder name="services">
+                    <Folder name="core">
+                        <File name="code\database\php\services\core\code.database.services.core.php" />
+                    </Folder>
+                </Folder>
+            </Folder>
+        </Folder>
+    </Project>
+    <Project name="Database">
+        <Folder name="scripts">
+            <Folder name="common">
+                <Folder name="inc">
+                    <File name="database\scripts\common\inc\classes.inc" />
+                    <File name="database\scripts\common\inc\common.inc" />
+                    <File name="database\scripts\common\inc\table_ids.inc" />
+                </Folder>
+                <File name="database\scripts\common\_readme.txt" />
+                <File name="database\scripts\common\domains.sql" />
+                <File name="database\scripts\common\schema.sql" />
+                <File name="database\scripts\common\table.currencies.sql" />
+                <File name="database\scripts\common\table.employee.sql" />
+                <File name="database\scripts\common\table.customers.sql" />
+                <File name="database\scripts\common\table.type_customer_states.sql" />
+            </Folder>
+            <Folder name="core">
+                <Folder name="inc">
+                    <File name="database\scripts\core\inc\classes.inc" />
+                    <File name="database\scripts\core\inc\common.inc" />
+                    <File name="database\scripts\core\inc\m4_macros.inc" />
+                    <File name="database\scripts\core\inc\objects_common_attrs.inc" />
+                    <File name="database\scripts\core\inc\table_ids.inc" />
+                </Folder>
+                <File name="database\scripts\core\domains.sql" />
+                <File name="database\scripts\core\drop_public_schema.sql" />
+                <File name="database\scripts\core\schema.sql" />
+                <File name="database\scripts\core\table.classes.sql" />
+                <File name="database\scripts\core\table.objects.sql" />
+                <File name="database\scripts\core\table.objects_common_attrs.sql" />
+                <File name="database\scripts\core\table.possible_objects_links.sql" />
+                <File name="database\scripts\core\table.table_names.sql" />
+                <File name="database\scripts\core\table.type_objects_common_attrs.sql" />
+                <File name="database\scripts\core\view.v_possible_objects_links.sql" />
+            </Folder>
+            <Folder name="cryptobot">
+                <Folder name="inc">
+                    <File name="database\scripts\cryptobot\inc\classes.inc" />
+                    <File name="database\scripts\cryptobot\inc\common.inc" />
+                    <File name="database\scripts\cryptobot\inc\table_ids.inc" />
+                </Folder>
+                <File name="database\scripts\cryptobot\domains.sql" />
+                <File name="database\scripts\cryptobot\schema.sql" />
+                <File name="database\scripts\cryptobot\table.coins.sql" />
+                <File name="database\scripts\cryptobot\table.markets.sql" />
+                <File name="database\scripts\cryptobot\table.markets_items_names.sql" />
+                <File name="database\scripts\cryptobot\table.prices.sql" />
+                <File name="database\scripts\cryptobot\table.prices_history.sql" />
+            </Folder>
+            <Folder name="generator">
+                <Folder name="inc">
+                    <File name="database\scripts\generator\inc\classes.inc" />
+                    <File name="database\scripts\generator\inc\common.inc" />
+                    <File name="database\scripts\generator\inc\table_ids.inc" />
+                </Folder>
+                <File name="database\scripts\generator\schema.sql" />
+                <File name="database\scripts\generator\table.companies.sql" />
+                <File name="database\scripts\generator\table.users.sql" />
+            </Folder>
+            <File name="database\scripts\.gitignore" />
+            <File name="database\scripts\init.sh" />
+            <File name="database\scripts\readme.txt" />
+        </Folder>
+    </Project>
+    <Project name="Tests">
+        <Folder name="lib">
+            <Folder name="php">
+                <Folder name="dbms">
+                    <Folder name="pgsql">
+                        <Folder name="lib.dbms.pgsql.connection">
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.connection\test_001-create--fail.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.connection\test_001-create.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.connection\test_002-build_dbobject_name.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.connection\test_002-build_dbobject_name--err-empty.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.connection\test_002-build_dbobject_name--err-bad.php" />
+                        </Folder>
+                        <Folder name="lib.dbms.pgsql.transaction">
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_001-begin--already_started.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_001-begin.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_002-commit.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_002-commit--already_completed.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_002-commit--not_exists.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_002-commit--work.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_003-rollback.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_003-rollback--already_completed.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_003-rollback--not_exists.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_003-rollback--work.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_004-query.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_004-query--already_completed.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_004-query--fail.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_005-gen_id.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_005-gen_id--already_completed.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_005-gen_id--fail.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_006-build_dbobject_name.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_006-build_dbobject_name--err-empty.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_006-build_dbobject_name--err-bad.php" />
+                            <File name="tests\lib\php\dbms\pgsql\lib.dbms.pgsql.transaction\test_006-build_dbobject_name--err-already_completed.php" />
+                        </Folder>
+                        <File name="tests\lib\php\dbms\pgsql\check_errors.php" />
+                        <File name="tests\lib\php\dbms\pgsql\run_all.sh" />
+                        <File name="tests\lib\php\dbms\pgsql\test_cfg.php" />
+                        <File name="tests\lib\php\dbms\pgsql\test_services.php" />
+                    </Folder>
+                </Folder>
+            </Folder>
+        </Folder>
+        <Folder name="code">
+            <Folder name="php">
+                <Folder name="common">
+                    <Folder name="code.common.dbclass_manager">
+                        <File name="tests\code\php\common\code.common.dbclass_manager\test_001.php" />
+                        <File name="tests\code\php\common\code.common.dbclass_manager\test_002-get_class_by_id--not_found.php" />
+                        <File name="tests\code\php\common\code.common.dbclass_manager\test_003-get_class_by_name--not_found.php" />
+                    </Folder>
+                </Folder>
+                <Folder name="database">
+                    <Folder name="data">
+                        <Folder name="common">
+                            <Folder name="code.database.data.common.class_names">
+                                <File name="tests\code\php\database\data\common\code.database.data.common.class_names\test_001-check_names.php" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="core">
+                            <Folder name="code.database.data.core.class_names">
+                                <File name="tests\code\php\database\data\core\code.database.data.core.class_names\test_001-check_names.php" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="cryptobot">
+                            <Folder name="code.database.data.cryptobot.class_names">
+                                <File name="tests\code\php\database\data\cryptobot\code.database.data.cryptobot.class_names\test_001-check_names.php" />
+                            </Folder>
+                        </Folder>
+                        <File name="tests\code\php\database\data\db_data_test_helper.php" />
+                    </Folder>
+                </Folder>
+                <File name="tests\code\php\run_all.sh" />
+                <File name="tests\code\php\test_cfg.php" />
+                <File name="tests\code\php\test_services.php" />
+                <File name="tests\code\php\check_errors.php" />
+            </Folder>
+        </Folder>
+    </Project>
+</NotepadPlus>

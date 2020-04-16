@@ -1,0 +1,2 @@
+define([[CLASSID_CORE_OBJECTS]],[[0]])
+define([[CLASSNAME_CORE_OBJECTS]],[[CORE.OBJECT]])

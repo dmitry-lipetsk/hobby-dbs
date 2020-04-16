@@ -1,0 +1,17 @@
+<?php
+
+namespace am\code\database\data\core{
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+class CODE_DATABASE_DATA__CORE__TABLE_NAMES
+{
+ const CORE_CLASSES
+  ='CORE.CLASSES';
+
+ const CORE_TABLE_NAMES
+  ='CORE.TABLE_NAMES';
+};//class CODE_DATABASE_DATA__CORE__TABLE_NAMES
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+}//namespace am\code\database\data\core
+?>

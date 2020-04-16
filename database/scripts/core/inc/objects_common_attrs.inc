@@ -1,0 +1,1 @@
+define([[OBJECT_COMMON_ATTR__READ_ONLY]],[[1]])
